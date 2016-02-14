@@ -385,7 +385,7 @@ def setup_database():
     # commit saves changes
     db.commit()
 
-###   printing the instruction on how to look at th e values on the database
+###   printing the instruction on how to look at the values on the database
 
     print("Instruction for understanding the value on the data table below \n\n First value is shown the location of the game \n"
           " Second value is a date of Game \n Third value is quantity of hat sold \n Forth value is a calculated value of hat sales from the game \n"
@@ -549,7 +549,7 @@ def worstItem(self):
 
 
 
-
+##  Display GUI frame
 def start_gui():
 
     hyGUI().mainloop()
