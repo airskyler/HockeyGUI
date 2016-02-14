@@ -196,7 +196,7 @@ class hyGUI(Frame):
 
 
 
-##
+##  Calling for database table to be displayed on GUI frame
     def _maketable(self):
         makeTableDatabase(self)
 
@@ -408,7 +408,11 @@ def setup_database():
 
 
 
-##    Adding the user data input to the database "hockeyTable"
+##    Adding the user data input to the database "hockeyTable" for the data for
+##    quantity of hat sold, jersey sold, hockey stick sold and poster sold. And add calculated Total sales data value for the
+##    item quantity multiple by the item's retail price to the table.
+##    Also adding the data for the total sales generated from the game
+
 def add_data( gameLocation, gameDate, hat, hatTotal, jersey, jerseyTotal, stick, stickTotal, poster, posterTotal, totalSales ):
     db = sqlite3.connect(database_filename)
 
@@ -491,6 +495,7 @@ def worstItem(self):
     string = ""
 
 
+## Open database connection
     db = sqlite3.connect(database_filename)
     cursor = db.cursor()
 
@@ -503,7 +508,8 @@ def worstItem(self):
     print(rows)
 
 
-
+## Comparing which item had a least amount of item sold with other game
+##  and display the text message on the GUI Frame as a label
     if rows[0][0]< minn:
         minn = rows[0][0]
 
@@ -534,6 +540,7 @@ def worstItem(self):
     self.resultBestLabel['text']= string
 
 
+##  Close connection from database
 
     db.close()
 
@@ -549,6 +556,7 @@ def start_gui():
 
 
 
+##  Calling to set up basic database table and start to make GUI frame
 def main():
     setup_database()
     start_gui()
